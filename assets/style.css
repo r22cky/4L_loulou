@@ -5,7 +5,7 @@ body {
  /*BANNER*/
 
 .banner {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -13,6 +13,7 @@ body {
   /*vertically centering content on any device*/
   margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
   transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+  margin-bottom: 10px;
 }
 
 .wrapper {
@@ -44,10 +45,6 @@ body {
   background-position: center;
 }
 
-.vertical-layer h2 {
-  font-weight: 600;
-}
-
 .vertical-layer:hover p {
   opacity: 1;
 }
@@ -55,13 +52,28 @@ body {
 .layer-content {
   color: white;
   text-align: center;
-  /*vertically centering content on any device*/
-  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
-  transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
 }
 
 .layer-content p {
   opacity: 0;
+}
+
+@media screen and (min-width: 640px) {
+  .layer-content h3 {
+  font-weight: 600;
+  /*vertically centering content on any device*/
+  margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+  transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .layer-content h3 {
+    font-weight: 500;
+    font-size: 40px;
+    transform: rotate(90deg);
+    margin-top: 50px;
+  }
 }
 
 .footer {
@@ -72,6 +84,7 @@ body {
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 10px;
+  position: relative;
 }
 
 .footer i {
@@ -89,6 +102,9 @@ body {
 }
 
 .signature {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
   font-size: 10px;
   font-style: italic;
   padding-bottom: 0;
